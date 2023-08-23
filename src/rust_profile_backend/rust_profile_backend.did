@@ -1,0 +1,15 @@
+type MyData = record {
+    "key": text;
+    "value": text;
+};
+
+service : {
+    "get_self": () -> (opt text);
+    //"add_user": (principal) -> ();
+    "add": (text, text) -> (opt text);
+    "get": (text) -> (opt text) query;
+    "update": (text, text) -> (opt text);
+    "remove": (text) -> (opt text);
+    "get_all": () -> (opt vec MyData )  query;
+    "get_by_id": (text) -> (opt vec MyData )  query;
+}
